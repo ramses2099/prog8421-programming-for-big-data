@@ -1,3 +1,5 @@
+#!/env/bin/ python3
+
 
 def main():
     print('ok text')
