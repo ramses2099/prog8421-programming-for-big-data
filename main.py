@@ -1,6 +1,7 @@
 #!/env/bin/ python3
 import os
 import math
+from temperature import temperature
 
 def discount_percent(invoice_t, cust_type):
     disc_per = 0
@@ -29,13 +30,36 @@ def discount_percent(invoice_t, cust_type):
         return
     print(msg)
  
+
+to_celsius = lambda fahrenheit: (fahrenheit - 32) * 5/9 
+ 
+ 
 def main():
     os.system("clear")
-    your_num = int(input("Enter a number: "))
-    while (your_num > 0):
-        product = your_num * 5
-        print(f"{your_num} * 5 = {product}")
-        your_num -= 1
+    
+    t = temperature.to_celsius(25)
+    print(t)
+    
+    # Map with lambda
+    # A Python lambda makes the map function far more concise.
+    myList = [10, 25, 17, 9, 30, -5]
+    # Double the value of each element
+    myList2 = map(lambda n : n*2, myList)
+    
+    for v in myList2:
+        print(v)
+    
+    rs = to_celsius(25)
+    print(rs)
+    
+    # Filter with lambda
+    # Lambdas can also simplify the filter() function.
+    # Filters the elements which are not multiples of 5
+    myList3 = filter(lambda n : n%5 == 0, myList)
+    for v in myList3:
+        print(v)
+    
+    
     
     
 if __name__ == "__main__":
